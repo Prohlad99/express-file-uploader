@@ -1,0 +1,35 @@
+{
+  "name": "express-file-uploader",
+  "version": "1.0.0",
+  "description": "A middleware for handling file uploads with validation in Express.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Prohlad99/express-file-uploader.git"
+  },
+  "keywords": [
+    "express",
+    "file",
+    "upload",
+    "file-upload",
+    "middleware",
+    "express-validator",
+    "multiparty"
+  ],
+  "author": "Prohlad Mandal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Prohlad99/express-file-uploader/issues"
+  },
+  "homepage": "https://github.com/Prohlad99/express-file-uploader#readme",
+  "dependencies": {
+    "express-validator": "^6.12.1",
+    "multiparty": "^4.2.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
