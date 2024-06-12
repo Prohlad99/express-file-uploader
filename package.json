@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Prohlad99/express-file-uploader.git"
+    "url": "https://github.com/Prohlad99/express-filepass.git"
   },
   "keywords": [
     "express",
@@ -22,9 +22,9 @@
   "author": "Prohlad Mandal",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Prohlad99/express-file-uploader/issues"
+    "url": "https://github.com/Prohlad99/express-filepass/issues"
   },
-  "homepage": "https://github.com/Prohlad99/express-file-uploader#readme",
+  "homepage": "https://github.com/Prohlad99/express-filepass#readme",
   "dependencies": {
     "express-validator": "^6.12.1",
     "multiparty": "^4.2.2"

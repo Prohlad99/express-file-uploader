@@ -163,7 +163,7 @@ app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 ```
 
 # Contributing
-If you find any issues or have suggestions for improvements, feel free to open an issue or submit a pull request on [GitHub](https://github.com/Prohlad99/express-file-uploader.git).
+If you find any issues or have suggestions for improvements, feel free to open an issue or submit a pull request on [GitHub](https://github.com/Prohlad99/express-filepass.git).
 
 
 ### Explanation
