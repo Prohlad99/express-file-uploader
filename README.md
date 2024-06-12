@@ -1,4 +1,4 @@
-# express-file-uploader
+# express-filepass
 
 A middleware for handling file uploads with validation in Express.js.
 
@@ -7,18 +7,18 @@ A middleware for handling file uploads with validation in Express.js.
 To install the package, use npm or yarn:
 
 ```bash
-npm install express-file-uploader
+npm install express-filepass
 # or
-yarn add express-file-uploader
+yarn add express-filepass
 ```
 # Usage
 ## _Basic Setup_
-Here's how to use the `express-file-uploader` middleware in your Express application.
+Here's how to use the `express-filepass` middleware in your Express application.
 
 ```javascript
 const express = require('express');
 const { body, validationResult } = require('express-validator');
-const fileUploader = require('express-file-uploader');
+const uploader = require('express-filepass');
 const User = require('./models/User'); // Assuming you have a User model
 
 const app = express();
@@ -42,7 +42,7 @@ const uploadOptions = {
 };
 
 // Middleware to handle form validation and file uploads
-app.post('/upload', fileUploader(validateForm, uploadOptions), async (req, res) => {
+app.post('/upload', uploader(validateForm, uploadOptions), async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(400).json({ errors: errors.array() });
@@ -110,11 +110,11 @@ const validateForm = [
 ];
 ```
 # Full Example
-Here's a full example demonstrating the use of `express-file-uploader` with both file upload and form validation:
+Here's a full example demonstrating the use of `express-filepass` with both file upload and form validation:
 ```javascript
 const express = require('express');
 const { body, validationResult } = require('express-validator');
-const fileUploader = require('express-file-uploader');
+const uploader = require('express-filepass');
 const User = require('./models/User'); // Assuming you have a User model
 
 const app = express();
@@ -135,7 +135,7 @@ const uploadOptions = {
   }
 };
 
-app.post('/upload', fileUploader(validateForm, uploadOptions), async (req, res) => {
+app.post('/upload', uploader(validateForm, uploadOptions), async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(400).json({ errors: errors.array() });
@@ -177,7 +177,7 @@ If you find any issues or have suggestions for improvements, feel free to open a
 - **Contributing**: Information on how to contribute to the project.
 - **License**: Licensing information for the project.
 
-By following this `README.md` file, users will have a clear understanding of how to install, configure, and use your `express-file-uploader` package.
+By following this `README.md` file, users will have a clear understanding of how to install, configure, and use your `express-filepass` package.
 
 ## License
 

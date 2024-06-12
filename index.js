@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const { validationResult } = require('express-validator');
 
-function fileUploader(validationRules, uploadOptions) {
+function uploader(validationRules, uploadOptions) {
   return (req, res, next) => {
     const form = new multiparty.Form();
     let responseSent = false;
@@ -146,4 +146,4 @@ function fileUploader(validationRules, uploadOptions) {
   };
 }
 
-module.exports = fileUploader;
+module.exports = uploader;

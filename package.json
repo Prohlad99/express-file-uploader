@@ -1,5 +1,5 @@
 {
-  "name": "express-file-uploader",
+  "name": "express-filepass",
   "version": "1.0.0",
   "description": "A middleware for handling file uploads with validation in Express.js",
   "main": "index.js",
