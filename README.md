@@ -33,11 +33,16 @@ const validateForm = [
 // Define file upload options
 const uploadOptions = {
   avatar: {
-    allowedTypes: ['image/jpeg', 'image/png', 'image/jpg'],
-    maxSize: 2 * 1024 * 1024, // 2 MB
+    allowedTypes: ['image/jpg', 'image/jpeg', 'image/png'],
+    maxSize: 5 * 1024 * 1024, // 5 MB
     uploadDir: './public/uploads/avatar',
     multiple: false,
-    maxFiles: 1
+    maxFiles: 1,
+    errorMessage: {
+      invalidType: 'Only .jpg, .png, .jpeg type allowed',
+      sizeExceeded: 'File size exceeds the limit of 5MB',
+      maxFiles: 'One file is allowed to be uploaded'
+    }
   }
 };
 
@@ -76,27 +81,40 @@ The `uploadOptions` object allows you to specify various settings for handling f
 | Option | Type |Description |
 | ------ | ------ |------ |
 | `allowedTypes` | Array |An array of allowed MIME types for the files. |
-| `maxSize` | Number | The maximum file size allowed (in bytes). |
-| `uploadDir` | String | The directory where the uploaded files will be saved.|
-| `multiple` | Boolean | Whether multiple files can be uploaded for the given field.|
-| `maxFiles` | Number | The maximum number of files allowed to be uploaded for the given field.|
-
+| `maxSize` | Number | The maximum file size allowed (in bytes)|
+| `uploadDir` | String | The directory where the uploaded files will be saved|
+| `multiple` | Boolean | Whether multiple files can be uploaded for the given field|
+| `maxFiles` | Number | The maximum number of files allowed to be uploaded for the given field|
+| `invalidType` | String | Error message when an invalid file type is uploaded|
+| `sizeExceeded` | String | Error message when the uploaded file exceeds the allowed size|
+| `maxFiles` | String | Error message when the number of uploaded files exceeds the allowed limit|
 # Example Configuration
 ```javascript
 const uploadOptions = {
   avatar: {
     allowedTypes: ['image/jpeg', 'image/png', 'image/jpg'],
-    maxSize: 2 * 1024 * 1024, // 2 MB
+    maxSize: 5 * 1024 * 1024, // 5 MB
     uploadDir: './public/uploads/avatar',
     multiple: false,
-    maxFiles: 1
+    maxFiles: 1,
+    errorMessage: {
+      invalidType: 'Only .jpeg, .png, .jpg type allowed',
+      sizeExceeded: 'File size exceeds the limit of 5MB',
+      maxFiles: 'One file is allowed to be uploaded'
+    }
   },
   documents: {
     allowedTypes: ['application/pdf'],
     maxSize: 5 * 1024 * 1024, // 5 MB
     uploadDir: './public/uploads/documents',
     multiple: true,
-    maxFiles: 5
+    maxFiles: 5,
+    //if you do not give this error message, the default error message will occur.
+    errorMessage: {
+      invalidType: 'Only .pdf type allowed',
+      sizeExceeded: 'File size exceeds the limit of 5MB',
+      maxFiles: 'Five file is allowed to be uploaded'
+    }
   }
 };
 ```
@@ -128,10 +146,15 @@ const validateForm = [
 const uploadOptions = {
   avatar: {
     allowedTypes: ['image/jpeg', 'image/png', 'image/jpg'],
-    maxSize: 2 * 1024 * 1024, // 2 MB
+    maxSize: 5 * 1024 * 1024, // 5 MB
     uploadDir: './public/uploads/avatar',
     multiple: false,
-    maxFiles: 1
+    maxFiles: 1,
+     errorMessage: {
+      invalidType: 'Only .jpeg .png .jpg type allowed',
+      sizeExceeded: 'File size exceeds the limit of 5MB',
+      maxFiles: 'One file is allowed to be uploaded'
+    }
   }
 };
 
